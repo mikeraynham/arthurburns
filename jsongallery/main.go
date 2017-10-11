@@ -25,7 +25,7 @@ type Root struct {
 }
 
 func main() {
-	var baseDir string;
+	var baseDir string
 	if len(os.Args) > 1 {
 		baseDir = os.Args[1]
 	}
@@ -56,16 +56,26 @@ func main() {
 				return nil
 			}
 
-			name := res[1]
-			index := res[2]
-			title := strings.Title(strings.Replace(name, "-", " ", -1))
+			imgName := res[1]
+			imgIndex := res[2]
+			imgTitle := toTitle(imgName)
+			sectionDir := filepath.Base(filepath.Dir(thumbPath))
+			sectionTitle := toTitle(sectionDir)
 
-			images[title] = append(images[title], Image{
-				Thumb:      filepath.Join(root.Thumb, name+"_tn_"+index+".jpg"),
-				Small:      filepath.Join(root.Small, name+"_sm_"+index+".jpg"),
-				Large:      filepath.Join(root.Large, name+"_lg_"+index+".jpg"),
-				Title:      title + " " + index,
-				CoverImage: isCoverImage(thumbPath, name, index),
+			buildPath := func(rootDir string, size string) string {
+				return filepath.Join(
+					rootDir,
+					sectionDir,
+					imgName+"_"+size+"_"+imgIndex+".jpg",
+				)
+			}
+
+			images[sectionTitle] = append(images[sectionTitle], Image{
+				Thumb:      buildPath(root.Thumb, "tn"),
+				Small:      buildPath(root.Small, "sm"),
+				Large:      buildPath(root.Large, "lg"),
+				Title:      imgTitle,
+				CoverImage: isCoverImage(thumbPath, imgName, imgIndex),
 			})
 
 			return nil
@@ -76,8 +86,12 @@ func main() {
 	fmt.Println(string(json))
 }
 
-func isCoverImage(thumbPath string, name string, index string) bool {
-	coverPath := filepath.Join(filepath.Dir(thumbPath), name+"_tn_"+index)
+func toTitle(fileName string) string {
+	return strings.Title(strings.Replace(fileName, "-", " ", -1))
+}
+
+func isCoverImage(thumbPath string, imgName string, imgIndex string) bool {
+	coverPath := filepath.Join(filepath.Dir(thumbPath), imgName+"_tn_"+imgIndex)
 	_, err := os.Stat(coverPath)
 	return !os.IsNotExist(err)
 }
