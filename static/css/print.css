@@ -1,0 +1,48 @@
+body, html
+{
+  margin:0;
+  padding:0;
+}
+
+body
+{
+  background:white;
+}
+
+a
+{
+  color:black;
+  text-decoration:none;
+  border:none;
+}
+
+img
+{
+  border-style:none;
+}
+
+.print-only
+{
+  display:block;
+}
+
+#wrapper, #content
+{
+  margin:0;
+  padding:0;
+  width:auto;
+  float: none !important;
+  color: black;
+  background: transparent;
+  font-size: 10pt;
+}
+
+#title
+{
+  display:none;
+}
+
+#nav
+{
+  display:none;
+}

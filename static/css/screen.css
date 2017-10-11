@@ -1,0 +1,293 @@
+body, html
+{
+  height:100%;
+  margin:0;
+  padding:0;
+}
+
+body
+{
+  font:0.9em/1.3em  Verdana, Geneva, Arial, Helvetica, sans-serif;
+  color:#EDE7C7;
+  background:black url(../images/site/header.jpg) no-repeat top center;
+  text-align:center;
+}
+
+.print-only
+{
+  display:none;
+}
+
+a
+{
+  color:#918F77;
+  text-decoration:none;
+  border-bottom:1px dotted #918F77;
+}
+
+a:visited
+{
+  color:#87463B;
+}
+
+a:hover, a:focus
+{
+  color:#EDE7C7;
+  border-bottom:1px solid #EDE7C7;
+}
+
+.thumb, .image
+{
+  margin:0;
+  padding:0;
+  text-align:center;
+  line-height:120%;
+  color:#918F77;
+  font-size:70%;
+}
+
+.thumb
+{
+  float:left;
+  width:166px;
+}
+
+.thumb a
+{
+  margin:0;
+  padding:0;
+  text-decoration:none;
+  border:none;
+}
+
+.thumb a img, .image img
+{
+  margin:0;
+  padding:0;
+  border:3px solid #918F77;
+}
+
+.thumb a:hover img
+{
+  margin:0;
+  padding:0;
+  border:3px solid #EDE7C7;
+}
+
+.clear-thumb
+{
+  clear:both;
+}
+
+.image
+{
+  width:100%;
+}
+
+table.nav
+{
+  margin:20px 0 20px 0;
+  padding:0;
+  width: 100%;
+}
+
+table td.nav_prev
+{
+  text-align:left;
+  width:33%;
+}
+
+table td.nav_return
+{
+  text-align:center;
+  width:33%;
+}
+
+table td.nav_next
+{
+  text-align:right;
+  width:33%;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+  text-align:center;
+  font-family:Georgia, "Times New Roman", Palatino, serif;
+  color:#918F77
+}
+
+h1
+{
+  color:#EDE7C7;
+}
+
+/* Contains header, navigation, content.
+  Set to full width of page, to allow for header graphic
+  being wider than the central column. */
+#wrapper
+{
+  /* margin-bottom must be negative value of height in #footer, #clear-footer */
+  margin:0 0 -80px 0;
+  padding:0;
+  min-height:100%;
+}
+
+#title
+{
+  margin:0;
+  padding:0;
+  height:200px;
+  background:transparent url(../images/site/title.png) no-repeat top center;
+  border-bottom:1px solid #EDE7C7;
+}
+
+/* Contains navigation, content, footer */
+#inner-wrapper, #footer
+{
+  width:500px;
+  margin:0 auto;
+  padding:0;
+}
+
+/* Contains content */
+#content
+{
+  text-align:left;
+  margin:50px 0 10px 0;
+  padding:0;
+}
+
+#content ul
+{
+  margin:0;
+  padding:0 0 0 1em;
+  text-indent:-1em;
+  list-style:none;
+  font-weight:bold;
+}
+
+#content ul.bulleted
+{
+  list-style:disc;
+  text-indent:1em;
+  font-weight:normal;
+}
+
+#content ul li.level_1
+{
+  font-weight:normal;
+}
+
+#content ul:after
+{
+  margin:0 0 1em 0;
+}
+
+#content dt
+{
+  font-weight:bold;
+  margin:1em 0 0 0;
+  padding:0;
+}
+
+#content dd
+{
+  margin:0;
+  padding:0;
+}
+
+/* Contains navigation */
+#nav
+{
+  position:absolute;
+  margin:0;
+  padding:0;
+  left:0;
+  top:199px;
+  width:100%;
+  font-size:80%;
+}
+
+#nav ul
+{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:inline;
+  text-align:center;
+  white-space:nowrap;
+  line-height:25px;
+  font-weight:bold;
+}
+
+#nav li
+{
+  display:inline;
+  list-style-type:none;
+}
+
+#nav li ul
+{
+  margin:0;
+  padding:0;
+  display:inline;
+}
+
+#nav li a, #nav li span
+{
+  padding:4px 10px 4px 10px;
+  color:black;
+  border:none;
+  background-color:#918F77;
+  text-decoration:none;
+}
+
+#nav li a:hover, #nav li a:focus, #nav li span
+{
+  background-color:#EDE7C7;
+  text-decoration:none;
+}
+
+#nav p.breadcrumbs
+{
+  font-size:70%;
+  color:#87463B;
+}
+
+/* Contains footer */
+#footer
+{
+  padding:0;
+  margin:0;
+  text-align:center;
+  font-size:90%;
+  width:100%;
+  background:black url(../images/site/footer.jpg) no-repeat bottom center;
+  border-top:1px solid #EDE7C7;
+}
+
+#footer dl
+{
+  margin:0;
+  padding:5px 0 0 0;
+  font-size:80%;
+  line-height:1.1em;
+}
+
+#footer dt, #footer dd
+{
+  margin:0;
+  padding:2px 0 0 0;
+}
+
+#footer dt
+{
+  font-weight:bold;
+}
+
+#footer, #clear-footer
+{
+  clear:both;
+  /* Positive value of margin-bottom in #wrapper */
+  height:80px;
+}
