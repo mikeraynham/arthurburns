@@ -10,17 +10,18 @@ import (
 	"strings"
 )
 
+type Section struct {
+	SectionTitle string
+	SectionDir   string
+	Images       []Image
+}
+
 type Image struct {
 	Thumb      string
 	Small      string
 	Large      string
 	Title      string
 	CoverImage bool
-}
-
-type Section struct {
-	SectionDir string
-	Images     []Image
 }
 
 type Root struct {
@@ -42,7 +43,10 @@ func main() {
 	}
 
 	pathRe := regexp.MustCompile(`^(.+)_tn_([0-9]+)\.jpg$`)
-	sections := make(map[string]*Section)
+	var section Section
+	var sections []Section
+	var sectionDir string
+	var prevSectionDir string
 
 	filepath.Walk(
 		filepath.Join(baseDir, root.Thumb),
@@ -64,8 +68,18 @@ func main() {
 			imgName := res[1]
 			imgIndex := res[2]
 			imgTitle := toTitle(imgName)
-			sectionDir := filepath.Base(filepath.Dir(thumbPath))
+			sectionDir = filepath.Base(filepath.Dir(thumbPath))
 			sectionTitle := toTitle(sectionDir)
+
+			if sectionDir != prevSectionDir {
+				if len(section.Images) > 0 {
+					sections = append(sections, section)
+				}
+				section = Section{
+					SectionDir: sectionDir,
+					SectionTitle: sectionTitle,
+				}
+			}
 
 			buildPath := func(rootDir string, size string) string {
 				return filepath.Join(
@@ -84,23 +98,16 @@ func main() {
 				CoverImage: isCoverImage(thumbPath, imgName, imgIndex),
 			}
 
-			if _, exists := sections[sectionTitle]; exists {
-				sections[sectionTitle].Images = append(
-					sections[sectionTitle].Images,
-					image,
-				)
-			} else {
-				sections[sectionTitle] = &Section{
-					SectionDir: sectionDir,
-					Images: []Image{
-						image,
-					},
-				}
-			}
+			section.Images = append(section.Images, image)
+			prevSectionDir = sectionDir
 
 			return nil
 		},
 	)
+
+	if len(section.Images) > 0 {
+		sections = append(sections, section)
+	}
 
 	json, _ := json.MarshalIndent(sections, "", "  ")
 	fmt.Println(string(json))
