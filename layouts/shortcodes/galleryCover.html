@@ -1,0 +1,17 @@
+{{ range $sectionTitle, $section := .Site.Data.gallery }}
+  <h3>
+    <a href="{{ $section.SectionDir }}/">{{ $sectionTitle }}</a>
+  </h3>
+  {{ range $image := $section.Images }}
+    {{ if $image.CoverImage }}
+      <div class="thumb">
+        <a href="{{ $section.SectionDir }}/">
+          <img src="{{ $image.Thumb }}" alt="{{ $image.Title }}">
+        </a>
+        <p>{{ $image.Title }}</p>
+      </div>
+    {{ end }}
+  {{ end }}
+  <div class="clear-thumb"></div>
+{{ end }}
+
