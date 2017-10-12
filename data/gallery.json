@@ -1,5 +1,6 @@
-{
-  "Circle Kits": {
+[
+  {
+    "SectionTitle": "Circle Kits",
     "SectionDir": "circle-kits",
     "Images": [
       {
@@ -116,7 +117,8 @@
       }
     ]
   },
-  "Granite Cobbles": {
+  {
+    "SectionTitle": "Granite Cobbles",
     "SectionDir": "granite-cobbles",
     "Images": [
       {
@@ -170,7 +172,8 @@
       }
     ]
   },
-  "Hand Made Bricks": {
+  {
+    "SectionTitle": "Hand Made Bricks",
     "SectionDir": "hand-made-bricks",
     "Images": [
       {
@@ -217,7 +220,8 @@
       }
     ]
   },
-  "Indian Stone": {
+  {
+    "SectionTitle": "Indian Stone",
     "SectionDir": "indian-stone",
     "Images": [
       {
@@ -572,7 +576,8 @@
       }
     ]
   },
-  "Miscellaneous Reclaimed": {
+  {
+    "SectionTitle": "Miscellaneous Reclaimed",
     "SectionDir": "miscellaneous-reclaimed",
     "Images": [
       {
@@ -703,7 +708,8 @@
       }
     ]
   },
-  "Miscellaneous Stone": {
+  {
+    "SectionTitle": "Miscellaneous Stone",
     "SectionDir": "miscellaneous-stone",
     "Images": [
       {
@@ -750,7 +756,8 @@
       }
     ]
   },
-  "Reclaimed Chimney Pots": {
+  {
+    "SectionTitle": "Reclaimed Chimney Pots",
     "SectionDir": "reclaimed-chimney-pots",
     "Images": [
       {
@@ -776,7 +783,8 @@
       }
     ]
   },
-  "Reclaimed Coping Stone": {
+  {
+    "SectionTitle": "Reclaimed Coping Stone",
     "SectionDir": "reclaimed-coping-stone",
     "Images": [
       {
@@ -830,7 +838,8 @@
       }
     ]
   },
-  "Reclaimed Sleepers": {
+  {
+    "SectionTitle": "Reclaimed Sleepers",
     "SectionDir": "reclaimed-sleepers",
     "Images": [
       {
@@ -842,7 +851,8 @@
       }
     ]
   },
-  "Reclaimed Stone": {
+  {
+    "SectionTitle": "Reclaimed Stone",
     "SectionDir": "reclaimed-stone",
     "Images": [
       {
@@ -952,7 +962,8 @@
       }
     ]
   },
-  "Reclaimed Troughs": {
+  {
+    "SectionTitle": "Reclaimed Troughs",
     "SectionDir": "reclaimed-troughs",
     "Images": [
       {
@@ -964,7 +975,8 @@
       }
     ]
   },
-  "Stone Block Paving Kits": {
+  {
+    "SectionTitle": "Stone Block Paving Kits",
     "SectionDir": "stone-block-paving-kits",
     "Images": [
       {
@@ -1004,7 +1016,8 @@
       }
     ]
   },
-  "Topsoil": {
+  {
+    "SectionTitle": "Topsoil",
     "SectionDir": "topsoil",
     "Images": [
       {
@@ -1030,7 +1043,8 @@
       }
     ]
   },
-  "Walling Stone": {
+  {
+    "SectionTitle": "Walling Stone",
     "SectionDir": "walling-stone",
     "Images": [
       {
@@ -1140,4 +1154,4 @@
       }
     ]
   }
-}
+]
