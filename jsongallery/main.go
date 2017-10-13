@@ -10,18 +10,22 @@ import (
 	"strings"
 )
 
-type Section struct {
-	SectionTitle string
-	SectionDir   string
-	Images       []Image
-}
-
 type Image struct {
 	Thumb      string
 	Small      string
 	Large      string
 	Title      string
 	CoverImage bool
+}
+
+type Section struct {
+	SectionTitle string
+	SectionDir   string
+	Images       []Image
+}
+
+type Sections struct {
+	Sections []Section
 }
 
 type Root struct {
@@ -44,7 +48,7 @@ func main() {
 
 	pathRe := regexp.MustCompile(`^(.+)_tn_([0-9]+)\.jpg$`)
 	var section Section
-	var sections []Section
+	var sections Sections
 	var sectionDir string
 	var prevSectionDir string
 
@@ -72,11 +76,9 @@ func main() {
 			sectionTitle := toTitle(sectionDir)
 
 			if sectionDir != prevSectionDir {
-				if len(section.Images) > 0 {
-					sections = append(sections, section)
-				}
+				sections.AppendSection(section)
 				section = Section{
-					SectionDir: sectionDir,
+					SectionDir:   sectionDir,
 					SectionTitle: sectionTitle,
 				}
 			}
@@ -105,12 +107,16 @@ func main() {
 		},
 	)
 
-	if len(section.Images) > 0 {
-		sections = append(sections, section)
-	}
+	sections.AppendSection(section)
 
-	json, _ := json.MarshalIndent(sections, "", "  ")
+	json, _ := json.MarshalIndent(sections.Sections, "", "  ")
 	fmt.Println(string(json))
+}
+
+func (s *Sections) AppendSection(section Section) {
+	if len(section.Images) > 0 {
+		s.Sections = append(s.Sections, section)
+	}
 }
 
 func toTitle(fileName string) string {
