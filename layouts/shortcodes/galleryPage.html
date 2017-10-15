@@ -1,0 +1,17 @@
+{{ $.Scratch.Add "sectionDir" (.Get "sectionDir") }}
+{{ range $section := .Site.Data.gallery }}
+{{- if eq $section.SectionDir ($.Scratch.Get "sectionDir") }}
+<h2>{{ $section.SectionTitle }}</h2>
+<div class="gallery">
+  {{- range $image := $section.Images }}
+  <div class="thumb">
+    <a href="/images/products/{{ $image.Page }}/">
+      <img src="/images/products/{{ $image.Thumb }}" alt="{{ $image.Title }}">
+    </a>
+    <p>{{ $image.Title }}</p>
+    </div>
+  {{- end }}
+  <div class="clear-thumb"></div>
+{{- end }}
+{{- end }}
+</div>
