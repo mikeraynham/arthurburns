@@ -10,6 +10,7 @@ import (
 var pathRe = regexp.MustCompile(`^(.+)_tn_([0-9]+)\.jpg$`)
 
 type Image struct {
+	Page       string
 	Thumb      string
 	Small      string
 	Large      string
@@ -39,6 +40,7 @@ func New(thumbPath string, sectionDir string) *Image {
 	}
 
 	return &Image{
+		Page:       filepath.Join(sectionDir, imgName+"_"+imgIndex),
 		Thumb:      buildPath("thumb", "tn"),
 		Small:      buildPath("small", "sm"),
 		Large:      buildPath("large", "lg"),
