@@ -35,7 +35,7 @@ func main() {
 	var prevSectionDir string
 
 	filepath.Walk(
-		filepath.Join(baseDir, "thumbs"),
+		baseDir,
 		func(thumbPath string, info os.FileInfo, err error) error {
 			if err != nil {
 				log.Fatal(err)
