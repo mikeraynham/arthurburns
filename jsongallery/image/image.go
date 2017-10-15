@@ -17,7 +17,7 @@ type Image struct {
 	CoverImage bool
 }
 
-func NewImage(thumbPath string, sectionDir string) *Image {
+func New(thumbPath string, sectionDir string) *Image {
 
 	thumbBase := filepath.Base(thumbPath)
 	res := pathRe.FindStringSubmatch(thumbBase)

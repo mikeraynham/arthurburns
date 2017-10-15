@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	. "github.com/mikeraynham/arthurburns/jsongallery/image"
+	"github.com/mikeraynham/arthurburns/jsongallery/image"
 	"github.com/mikeraynham/arthurburns/jsongallery/pathfmt"
 	"log"
 	"os"
@@ -13,17 +13,15 @@ import (
 type Section struct {
 	SectionTitle string
 	SectionDir   string
-	Images       []Image
+	Images       []image.Image
 }
 
-type Sections struct {
-	Sections []Section
-}
-
-func (s *Sections) AppendSection(section Section) {
+func AppendSection(sections []Section, section Section) []Section {
 	if len(section.Images) > 0 {
-		s.Sections = append(s.Sections, section)
+		sections = append(sections, section)
 	}
+
+	return sections
 }
 
 func main() {
@@ -33,8 +31,7 @@ func main() {
 	}
 
 	var section Section
-	var sections Sections
-	var sectionDir string
+	var sections []Section
 	var prevSectionDir string
 
 	filepath.Walk(
@@ -48,31 +45,32 @@ func main() {
 				return nil
 			}
 
-			sectionDir = filepath.Base(filepath.Dir(thumbPath))
+			sectionDir := filepath.Base(filepath.Dir(thumbPath))
 			sectionTitle := pathfmt.ToTitle(sectionDir)
-			image := NewImage(thumbPath, sectionDir)
-
-			if image == nil {
-				return nil
-			}
 
 			if sectionDir != prevSectionDir {
-				sections.AppendSection(section)
+				sections = AppendSection(sections, section)
 				section = Section{
 					SectionDir:   sectionDir,
 					SectionTitle: sectionTitle,
 				}
 			}
 
-			section.Images = append(section.Images, *image)
+			img := image.New(thumbPath, sectionDir)
+
+			if img == nil {
+				return nil
+			}
+
+			section.Images = append(section.Images, *img)
 			prevSectionDir = sectionDir
 
 			return nil
 		},
 	)
 
-	sections.AppendSection(section)
+	sections = AppendSection(sections, section)
 
-	json, _ := json.MarshalIndent(sections.Sections, "", "  ")
+	json, _ := json.MarshalIndent(sections, "", "  ")
 	fmt.Println(string(json))
 }
