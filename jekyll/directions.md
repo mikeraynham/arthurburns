@@ -1,4 +1,5 @@
 ---
+layout: wrapper
 title: "Directions"
 description: "How to find Arthur Burns and Son"
 menu:

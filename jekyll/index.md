@@ -1,4 +1,5 @@
 ---
+layout: wrapper
 title: "Product List"
 description: "See our list of stone products"
 menu:

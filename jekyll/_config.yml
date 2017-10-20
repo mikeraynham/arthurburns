@@ -1,0 +1,22 @@
+title: Arthur Burns & Son
+email: enquiries@mikeraynham.co.uk
+description: Suppliers of newly quarried and reclaimed natural stone paving, crazy paving, walling & coping stone.
+baseurl: ""
+url: "http://www.arthurburns.co.uk"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

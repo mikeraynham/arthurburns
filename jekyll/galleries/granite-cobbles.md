@@ -2,4 +2,4 @@
 title: "Galleries"
 description: "Photographs of our stone products, at the yard and installed"
 ---
-{{< galleryPage sectionDir="granite-cobbles" >}}
+{% include gallery_page.html sectionDir="granite-cobbles" %}

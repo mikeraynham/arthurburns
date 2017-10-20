@@ -1,4 +1,5 @@
 ---
+layout: wrapper
 title: "Contact"
 description: "Contact details"
 menu:
