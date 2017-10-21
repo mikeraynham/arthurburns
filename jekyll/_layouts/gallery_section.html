@@ -1,11 +1,11 @@
-{%- for section in site.data.gallery %}
-{%- if section.SectionDir != include.SectionDir %}
-  {%- continue %}
-{%- endif %}
-{% include gallery_nav.html %}
-<h2>{{ section.SectionTitle }}</h2>
+---
+layout: wrapper
+title: "Galleries"
+description: "Photographs of our stone products, at the yard and installed"
+---
+<h2>{{ page.section.SectionTitle }}</h2>
 <div class="gallery">
-  {%- for image in section.Images %}
+  {%- for image in page.section.Images %}
   <div class="thumb">
     <a href="/galleries/{{ image.Page }}/">
       <img src="/images/products/{{ image.Thumb }}" alt="{{ image.Title }}">
@@ -15,5 +15,3 @@
   {%- endfor %}
   <div class="clear-thumb"></div>
 </div>
-{% include gallery_nav.html %}
-{%- endfor %}

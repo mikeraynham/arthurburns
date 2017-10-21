@@ -10,6 +10,13 @@ markdown: kramdown
 plugins:
   - jekyll-feed
 
+page_gen:
+  - index_files: true
+    data: gallery
+    name: SectionDir
+    template: gallery_item
+    dir: galleries
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
