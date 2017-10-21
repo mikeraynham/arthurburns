@@ -31,6 +31,20 @@
       </div>
       <div id="clear-footer"></div>
     </div>
+    <p>{{ page.url }}</p>
+    <div id="nav">
+      <ul>
+      {%- for item in site.data.nav %}
+        <li>
+        {%- if page.url == item.url %}
+        <span>{{ item.name }}</span>
+        {%- else %}
+        <a href="{{ item.url }}" title="{{ page.description }}">{{ item.name }}</a>
+        {%- endif %}
+        </li>
+      {%- endfor %}
+      </ul>
+    </div>
     <div id="footer">
       <dl>
         <dt>Arthur&nbsp;Burns&nbsp;&amp;&nbsp;Son</dt>

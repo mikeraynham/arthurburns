@@ -1,38 +1,19 @@
-{{- sectionDir := .Get "sectionDir" -}}
-{{- gallery := .Site.Data.gallery -}}
-{{- lastIndex := sub (len gallery) 1 -}}
-{{- range index, section := gallery -}}
-{{- if eq section.SectionDir sectionDir -}}
-{{- prevIndex := sub index 1 -}}
-{{- nextIndex := add index 1 -}}
+{%- for section in site.data.gallery %}
+{%- if section.SectionDir != include.SectionDir %}
+  {%- continue %}
+{%- endif %}
+{% include gallery_nav.html %}
 <h2>{{ section.SectionTitle }}</h2>
-<table class="nav">
-    <tr>
-        {{- if lt prevIndex 0 -}}
-        <td class="nav_prev">Previous</td>
-        {{- else -}}
-        {{- prevSection := (index .Site.Data.gallery prevIndex) -}}
-        <td class="nav_prev"><a href="/galleries/{{ prevSection.SectionDir }}" title="{{ prevSection.SectionTitle }}">Previous</a></td>
-        {{- end -}}
-        <td class="nav_return"><a href="/galleries/" title="Back to Galleries">Galleries</a></td>
-        {{- if gt nextIndex lastIndex -}}
-        <td class="nav_next">Next</td>
-        {{- else -}}
-        {{- nextSection := (index .Site.Data.gallery nextIndex) -}}
-        <td class="nav_next"><a href="/galleries/{{ nextSection.SectionDir }}" title="{{ nextSection.SectionTitle }}">Next</a></td>
-        {{- end -}}
-    </tr>
-</table>
 <div class="gallery">
-  {{- range image := section.Images -}}
+  {%- for image in section.Images %}
   <div class="thumb">
     <a href="/images/products/{{ image.Page }}/">
       <img src="/images/products/{{ image.Thumb }}" alt="{{ image.Title }}">
     </a>
     <p>{{ image.Title }}</p>
     </div>
-  {{- end }}
+  {%- endfor %}
   <div class="clear-thumb"></div>
-{{- end -}}
-{{- end -}}
 </div>
+{% include gallery_nav.html %}
+{%- endfor %}

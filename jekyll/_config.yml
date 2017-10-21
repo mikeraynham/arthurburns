@@ -3,6 +3,7 @@ email: enquiries@mikeraynham.co.uk
 description: Suppliers of newly quarried and reclaimed natural stone paving, crazy paving, walling & coping stone.
 baseurl: ""
 url: "http://www.arthurburns.co.uk"
+permalink: pretty
 
 # Build settings
 markdown: kramdown

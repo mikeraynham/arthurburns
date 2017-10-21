@@ -1,0 +1,25 @@
+<table class="nav">
+  <tbody>
+    <tr>
+      <td class="nav_prev">
+      {%- if forloop.first %}
+        Previous
+      {%- else %}
+        {%- assign prev_i = forloop.index0 | minus: 1 %}
+        <a href="{{ site.data.gallery[prev_i].sectionDir }}/" title="Previous Gallery">Previous</a>
+      {%- endif %}
+      </td>
+      <td class="nav_return">
+        <a href="/galleries/" title="Back to Galleries">Galleries</a>
+      </td>
+      <td class="nav_next">
+      {%- if forloop.last %}
+        Next
+      {%- else %}
+        {%- assign next_i = forloop.index0 | plus:  1 %}
+        <a href="/galleries/{{ site.data.gallery[next_i].SectionDir }}/" title="Next Gallery">Next</a>
+      {%- endif %}
+      </td>
+    </tr>
+  </tbody>
+</table>

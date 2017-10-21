@@ -1,11 +1,7 @@
 ---
+layout: wrapper
 title: "About"
 description: "Information about Arthur Burns and Son"
-menu:
-  main:
-    name: "About"
-    url: "/about/"
-    weight: 3
 ---
 <h4>Helping to build the future with materials from the past</h4>
 

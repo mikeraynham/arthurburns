@@ -1,0 +1,22 @@
+[
+  {
+    "url": "/",
+    "name": "Home"
+  },
+  {
+    "url": "/galleries/",
+    "name": "Galleries"
+  },
+  {
+    "url": "/about/",
+    "name": "About"
+  },
+  {
+    "url": "/contact/",
+    "name": "Contact"
+  },
+  {
+    "url": "/directions/",
+    "name": "Directions"
+  }
+]

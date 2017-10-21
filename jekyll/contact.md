@@ -2,11 +2,6 @@
 layout: wrapper
 title: "Contact"
 description: "Contact details"
-menu:
-  main:
-    name: "Contact"
-    url: "/contact/"
-    weight: 4
 ---
 <dl>
     <dt>Address</dt>

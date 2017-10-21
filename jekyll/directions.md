@@ -2,11 +2,6 @@
 layout: wrapper
 title: "Directions"
 description: "How to find Arthur Burns and Son"
-menu:
-  main:
-    name: "Directions"
-    url: "/directions/"
-    weight: 5
 ---
 <h3>Online Directions</h3>
 <p>Enter your postcode here to get directions from Google Maps.</p>

@@ -2,11 +2,6 @@
 layout: wrapper
 title: "Product List"
 description: "See our list of stone products"
-menu:
-  main:
-    name: "Product List"
-    url: "/"
-    weight: 1
 ---
 <h3>Full Product List</h3>
 <ul>
