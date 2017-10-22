@@ -4,9 +4,12 @@ title: "Galleries"
 description: "Photographs of our stone products, at the yard and installed"
 ---
 <h2>{{ page.section.SectionTitle }}</h2>
+{% include gallery_image_nav.html %}
 <div class="image">
   <p>
     <img src="/images/products/{{ page.image.Small }}" alt="{{ page.image.Title }}" />
   </p>
   <p>{{ page.image.Title }}</p>
 </div>
+{% include gallery_image_nav.html %}
+

@@ -4,6 +4,7 @@ title: "Galleries"
 description: "Photographs of our stone products, at the yard and installed"
 ---
 <h2>{{ page.section.SectionTitle }}</h2>
+{% include gallery_section_nav.html %}
 <div class="gallery">
   {%- for image in page.section.Images %}
   <div class="thumb">
@@ -15,3 +16,4 @@ description: "Photographs of our stone products, at the yard and installed"
   {%- endfor %}
   <div class="clear-thumb"></div>
 </div>
+{% include gallery_section_nav.html %}

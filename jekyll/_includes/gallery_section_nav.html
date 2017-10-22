@@ -1,0 +1,19 @@
+<table class="nav">
+  <tr>
+    <td class="nav_prev">
+    {%- if page.prev_section %}
+      <a href="/galleries/{{ page.prev_section.SectionDir }}" title="{{ page.prev_section.SectionTitle | html }}">Previous</a>
+    {%- else %}
+      Previous
+    {%- endif %}
+    </td>
+    <td class="nav_return"><a href="/galleries/" title="Back to Galleries">Galleries</a></td>
+    <td class="nav_next">
+    {%- if page.next_section %}
+      <a href="/galleries/{{ page.next_section.SectionDir }}" title="{{ page.next_section.SectionTitle | html }}">Next</a>
+    {%- else %}
+      Next
+    {%- endif %}
+    </td>
+  </tr>
+</table>
