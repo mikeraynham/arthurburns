@@ -29,3 +29,27 @@ description: "Contact details"
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.arthurburns.co.uk/wood_end_sk10_4sj",
+  "url": "https://www.arthurburns.co.uk/",
+  "name": "Arthur Burns &amp; Son",
+  "telephone": "+44-1625-582338",
+  "image": "https://www.arthurburns.co.uk/images/site/title.png",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "53.28775",
+    "longitude": "-2.19878"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "GB",
+    "streetAddress": "Wood End, Prestbury Road",
+    "addressLocality": "Macclesfield",
+    "addressRegion": "Cheshire",
+    "postalCode": "SK10 4SJ"
+  }
+}
+</script>
